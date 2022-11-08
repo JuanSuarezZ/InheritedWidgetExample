@@ -1,24 +1,29 @@
 import 'dart:math';
 
 import 'package:ejemplo/pages/pag2_page.dart';
+import 'package:ejemplo/pages/streams_page.dart';
 import 'package:flutter/material.dart';
 import 'models/colores.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Titile2 Material App',
-      home: Home(),
-      routes: {'pag2': (_) => Pag2()},
+      initialRoute: 'streams',
+      routes: {'pag2': (_) => const Pag2(), 'streams': (_) => StreamsPage()},
     );
   }
 }
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -55,12 +60,12 @@ class _HomeState extends State<Home> {
                   onPressed: () {
                     Navigator.pushNamed(context, 'pag2');
                   },
-                  icon: Icon(Icons.arrow_forward_ios_sharp))
+                  icon: const Icon(Icons.arrow_forward_ios_sharp))
             ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.ac_unit_outlined),
+          child: const Icon(Icons.ac_unit_outlined),
           onPressed: () {
             setState(() {
               color1 = Color((Random().nextDouble() * 0xFFFFFF).toInt())
@@ -87,7 +92,7 @@ class DummiContainer extends StatelessWidget {
     return AnimatedContainer(
       height: coloresInhe?.alto1,
       width: coloresInhe?.ancho1,
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: coloresInhe?.color1,
@@ -97,6 +102,8 @@ class DummiContainer extends StatelessWidget {
 }
 
 class DummiContainer2 extends StatelessWidget {
+  const DummiContainer2({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final coloresInhe =
@@ -104,7 +111,7 @@ class DummiContainer2 extends StatelessWidget {
     return AnimatedContainer(
       height: coloresInhe?.alto2,
       width: coloresInhe?.ancho2,
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: coloresInhe?.color2,
