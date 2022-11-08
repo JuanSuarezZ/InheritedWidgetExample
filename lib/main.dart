@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Material App',
+      title: 'Titile Material App',
       home: Home(),
       routes: {'pag2': (_) => Pag2()},
     );
