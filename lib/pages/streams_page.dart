@@ -11,7 +11,7 @@ class StreamsPage extends StatefulWidget {
 
 class _StreamsPageState extends State<StreamsPage> {
   final StreamController<String> controller = TagBloc().tagController;
-  late final StreamSubscription<String> streamSubscription;
+  StreamSubscription<String>? streamSubscription;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class _StreamsPageState extends State<StreamsPage> {
                 child: const Text('push')),
             ElevatedButton(
                 onPressed: () {
-                  streamSubscription.cancel();
+                  streamSubscription!.cancel();
                 },
                 child: const Text('Unbscription')),
           ],
