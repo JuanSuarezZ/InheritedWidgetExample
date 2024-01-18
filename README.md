@@ -1,4 +1,5 @@
 # Como funciona el InheritedWidget
+# How InheritedWidget works
 
 
 Ejemplo de como funciona el Inherited widget como gestor de estado. 
